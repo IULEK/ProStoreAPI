@@ -28,7 +28,7 @@ bot.on('message', async (msg) => {
   const mess = msg.text
   const chatId = msg.chat.id;
   if (mess == '/start') {
-    await bot.sendMessage(chatId, 'Узнать статус заказ 👇', {reply_markup: {inline_keyboard: [[{text: 'Открыть', web_app: {url: process.env.web_url}}]]}});
+    await bot.sendMessage(chatId, 'Приложение ProStore', {reply_markup: {inline_keyboard: [[{text: 'Открыть', web_app: {url: process.env.web_url}}]]}});
   }
 
 });

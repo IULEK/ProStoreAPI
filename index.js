@@ -52,6 +52,7 @@ app.post('/contracts', async (req,res) => {
   const sql =  `select * from contract inner join good on good.idGood = contract.idGoods inner join employee on contract.idEmployee = employee.idEmployee inner join provider on provider.idProvider = contract.idProvider where employee.idEmployee = ${req.body.idEmployee} and contract.status != 3`
   try {
     const [result] = await connection.query(sql);
+    console.log(result)
     if (result.length != 0) {
       res.send(result)
     } else {
